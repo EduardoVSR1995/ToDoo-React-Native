@@ -1,22 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Header } from 'react-native/Libraries/NewAppScreen';
+import { useState } from 'react';
+import { Text, View, Image } from 'react-native'; 
+import allStyle from './assets/styles/style.js';
+
 
 export default function App() {
+  const [styles, setStyles] = useState();
+  
+  useState(()=>{
+    allStyle().then((i)=> setStyles({...i}) )
+  },[])
+
+  if( !styles ) return <View />
+
   return (
-    <View style={styles.container}>
-      <Header>ToDooozinha</Header>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+  <>
+    <View style={styles.header}>
+      <Text style={styles.fontHeader} >
+        ToDooozinha
+      </Text>
     </View>
+    <View style={styles.container}>
+      <Text style={styles.fonts} >
+        OIOIO
+      </Text>
+      <Image style={styles.image} source={require('./assets/images/trash.png')} /> 
+    </View>
+    <StatusBar style="auto" />
+  </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
