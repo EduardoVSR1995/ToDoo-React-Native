@@ -1,9 +1,10 @@
 import * as Font from 'expo-font';
 import { StyleSheet } from 'react-native'; 
+import TiltNeonRegular from './TiltNeon-Regular.ttf'
 
 export default async function allStyle(){
   await Font.loadAsync({
-      'TiltNeon-Regular': require('./TiltNeon-Regular.ttf'),
+      'TiltNeon-Regular': TiltNeonRegular,
   });  
 
   const styles = StyleSheet.create({
@@ -21,13 +22,22 @@ export default async function allStyle(){
       height:20,
       width: 20,
     },
-    container: {
-      flexWrap: 'wrap',
-      fontSize:60,
+    activit: {
+      flexDirection:'row',
       height: 40,
       width: '100%',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    container: {
+      height: '100%' ,
+    },
+    input: {
+      borderRadius:20,
+      height: 80,
+      color: 'black',
+      borderColor: 'gray',
+      borderWidth: 1,
     },
     header: {
       height: 100,
