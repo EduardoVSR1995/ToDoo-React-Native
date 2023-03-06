@@ -1,11 +1,45 @@
-import * as Font from 'expo-font';
 import { StyleSheet } from 'react-native'; 
-import TiltNeonRegular from './TiltNeon-Regular.ttf'
+
+export type Styles ={
+  fontHeader: {
+    fontFamily: string ,
+    fontSize:number,
+  },
+  fonts: {
+    fontFamily: string ,
+    fontSize: number,
+    width: string,
+    marginLeft: string,
+  },
+  image: {
+    height:number,
+    width: number,
+  },
+  activit: {
+    flexDirection:'row',
+    height: number,
+    width: string,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  container: {
+    height: string ,
+  },
+  input: {
+    borderRadius:number,
+    height: number,
+    color: string,
+    borderColor: string,
+    borderWidth: 1,
+  },
+  header: {
+    height: number,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+}
 
 export default async function allStyle(){
-  await Font.loadAsync({
-      'TiltNeon-Regular': TiltNeonRegular,
-  });  
 
   const styles = StyleSheet.create({
     fontHeader: {

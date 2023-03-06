@@ -1,33 +1,4 @@
 {
-  "expo": {
-    "name": "Todoo-app",
-    "slug": "Todoo-app",
-    "privacy": "public",
-    "plataforms": [
-      "android"
-    ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "android": {
-      "package": "com.dudu0007.Todooapp"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "30defc8b-8b5c-44b3-abbe-d844cfbaf11e"
-      }
-    }
-  }
+  "name": "ToDooozinha",
+  "displayName": "ToDooozinha"
 }

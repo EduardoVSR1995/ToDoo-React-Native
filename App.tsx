@@ -1,23 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { Text, View, Image, TextInput, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native'; 
-import allStyle from './src/styles/style.js';
-import trash from './src/images/trash.png'
-import send from './src/images/send.png'
+import { useEffect, useState } from 'react';
+import { Text, View, Image, TextInput, ScrollView, SafeAreaView, TouchableOpacity, StatusBar } from 'react-native'; 
+import trash from './itens/images/trash.png'; 
+import send from './itens/images/send.png';
+import allStyle, { Styles } from './itens/styles/style';
 
-export default function App() {
-  const [styles, setStyles] = useState();
-  const [list, setList] = useState([]);
-  const [task, setTask] = useState('');
+export default function App(): JSX.Element {
+  const [styles, setStyles] = useState<Styles>(); 
+  const [list, setList] = useState<string[]>([]);
+  const [task, setTask] = useState<string>('');
   
-  useState(()=>{
-    allStyle().then((i)=> setStyles({...i}) )
-  },[])
+  useEffect(()=>{
+    allStyle().then((i)=> setStyles(i as Styles))
+  }, []);
 
   if( !styles ) return <View />
 
+  styles as Styles;
+
   return (
   <>
+    <StatusBar />
     <View style={styles.header}>
       <Text style={styles.fontHeader} >
         ToDooozinha
@@ -81,7 +83,6 @@ export default function App() {
           />
       </TouchableOpacity>
     </SafeAreaView>
-    <StatusBar style="auto" />
   </>
   );
 }
